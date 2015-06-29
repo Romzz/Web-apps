@@ -102,8 +102,8 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-
-  return
+  hlena, hlenb = (len(a) + 1)/2, (len(b) + 1)/2
+  return a[:hlena] + b[:hlenb] + a[hlena:] + b[hlenb:]
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
