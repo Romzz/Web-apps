@@ -57,7 +57,11 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
-  return 
+    firstchara = a[0]+a[1]
+    firstcharb = b[0]+b[1]
+    endofa = a[2:]
+    endofb = b[2:]
+    return firstcharb + endofa + ' ' + firstchara + endofb
 
 
 # D. verbing
@@ -68,8 +72,12 @@ def mix_up(a, b):
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
-  # +++your code here+++
-  return
+	if (len(s)>=3):
+		if (s.rfind("ing")==-1):
+			s+="ing"
+		else:
+			s+="ly"
+	return s
 
 
 # E. not_bad
@@ -81,8 +89,9 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-  # +++your code here+++
-  return
+	import re
+	s = re.sub("not.+bad", "good", s)
+  	return s
 
 
 # F. front_back
@@ -93,7 +102,7 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-  # +++your code here+++
+
   return
 
 # Provided simple test() function used in main() to print
